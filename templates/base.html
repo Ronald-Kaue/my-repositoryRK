@@ -6,12 +6,8 @@
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
     <title>Mini-Aplicação</title>
 </head>
-<body id="body">
-    <p>
-        <a href="/compras"><strong>Compras</strong></a>
-        <a href="/mercado"><strong>Mercado</strong></a>
-        <a href="/gastos"><strong>Gastos</strong></a>
-        <a href="/dobro"><strong>Dobro</strong></a>
-    </p>
+<body>
+    {% block conteudo %}
+    {% endblock %}
 </body>
 </html>
