@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<form action="{{url_for('recebedados')}}" method="POST">
+    <label for="">Nome:</label>
+    <input type="text" name="nome">
+    <br>
+    <label for="">Email:</label>
+    <input type="text" name="email">
+    <br>
+
+    <select name="estado">
+        <option value="PE">Pernambuco</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="BA">Bahia</option>
+    </select>
+
+    <button type="submit">Enviar</button>
+</form>
+
+{% endblock %}

@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -25,6 +25,18 @@ def gastos(mes, valor):
 def dobro(n):
     resul = n*2
     return render_template('dobro.html', n = n, result = resul)
+
+@app.route('/dados')
+def dados():
+    return render_template('dados.html')
+
+@app.route('/recebedados', methods = ['POST'])
+def recebedados():
+    nome = request.form['nome']
+    email = request.form['email']
+    estado = request.form['estado']
+    # request.args para recuperar os dados via método GET
+    return render_template('recebedados.html', n = nome, e = email, es = estado)
 
 if __name__ == '__main__':
     app.run()
