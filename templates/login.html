@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<form action="{{url_for('verificalogin')}}" method="post">
+    <label>Usuário:</label>
+    <input type="text" name="usuário"><br>
+    <label>Senha:</label>
+    <input type="text" name="senha"><br>
+    <input type="submit" value="Entrar">
+</form>
+
+{% endblock %}

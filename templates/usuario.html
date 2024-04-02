@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<ul>
+    <li>Inicio</li>
+    <li>Meus Dados</li>
+    <li>Usuários</li>
+</ul>
+
+{% if nome == "admin" %}
+    <li>Restrito</li>
+{% endif %}
+
+{% endblock %}

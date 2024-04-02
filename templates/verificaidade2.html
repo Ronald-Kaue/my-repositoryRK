@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h2>Olá</h2>
+{% if i >= 18 %}
+    <p>Você é MAIOR de idade</p>
+{% else %}
+    <p>Você é MENOR de idade</p>
+{% endif %}
+
+<p>Você tem {{i}} anos</p>
+
+{% endblock %}

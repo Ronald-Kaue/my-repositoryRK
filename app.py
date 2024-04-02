@@ -38,5 +38,33 @@ def recebedados():
     # request.args para recuperar os dados via método GET
     return render_template('recebedados.html', n = nome, e = email, es = estado)
 
+@app.route('/verificação/<int:idade>')
+def verificacao(idade):
+    if idade >= 18:
+        return "Você é MAIOR de idade"
+    else:
+        return "Você é MENOR de idade"
+    
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/verificalogin', methods=['POST'])
+def verificalogin():
+    usuario = request.form['usuário']
+    senha = request.form['senha']
+    if usuario == "Alba" and senha == "123":
+        return render_template('verificalogin.html', u = usuario)
+    else:
+        return "Você não tem permissão"
+
+@app.route('/verificaidade2/<int:idade>')
+def verificaidade2(idade):
+    return render_template('verificaidade2.html', i = idade)
+
+@app.route('/usuario/<nome>')
+def usuario(nome):
+    return render_template('usuario.html', n = nome)
+
 if __name__ == '__main__':
     app.run()
